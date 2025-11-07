@@ -1,9 +1,3 @@
-(*
- * Author: Franz Zbinden
- * Date: 09/08/2025
- * Purpose: This program computes and displays the components (hours, minutes,
- *          and seconds) of a moment in time.
- *)
 
 let timeComponents elapsedSecs =    
     let secsPerHour = 3600

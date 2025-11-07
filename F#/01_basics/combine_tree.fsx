@@ -1,14 +1,7 @@
-(*
- * File: combine_three.fsx
- * Author: Franz Zbinden
- * Date: 09/10/2025
- * Purpose: This program computes and displays the result of combining three
- *          numbers using the given two-argument function.
- *)
 
 let sum num1 num2 = num1 + num2
 
-let minimum num1 num2 = if num1 < num2 then num1 else num2  // if the letters are the same it means that they are supposed to be same type
+let minimum num1 num2 = if num1 < num2 then num1 else num2  // si las letras inferidas de tipo son iglaues, tienen que ser de distinto tipo
 
 let combineThree num1 num2 num3 combineTwo =
     let temp = combineTwo num1 num2

@@ -49,3 +49,7 @@ let sumation' num =
         |_ -> loop (cnt-1) (cnt + result)
     
     loop num 0
+
+
+
+

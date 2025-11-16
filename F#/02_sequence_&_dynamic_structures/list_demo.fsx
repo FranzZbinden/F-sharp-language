@@ -1,10 +1,9 @@
 
-// Structural Shaving is storage managment using pointers kind of
 
 // Entry point of the program.
-let numbers = [30; 10; 50; 40; 20]  // in F# the elements on lists are separeted with ";"
+let numbers = [30; 10; 50; 40; 20]
 
-printfn "The list of numbers is %A" numbers 
+printfn "The list of numbers is %A" numbers
 
 printfn "\nThese are the elements, one per line: "
 for elem in numbers do 

@@ -21,7 +21,7 @@ let fiboIter num =
 
 
 let fiboHigher num =
-    
+    List.fold (fiboIter) 0 [0..num]
 
 
 // let fiboSeq =

@@ -20,8 +20,9 @@ let fiboIter num =
     loop num
 
 
-let fiboHigher f num =
-    List.fold (f num) 0 [0..num]
-
+let fiboHigher num =
+    let window (prev, curr) _ = (curr, curr + prev)
+    let (prev, curr) = List.fold window (0, 1) [1..num]
+    prev
 
 // let fiboSeq =

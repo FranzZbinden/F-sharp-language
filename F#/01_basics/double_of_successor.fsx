@@ -3,7 +3,7 @@
 let successor = ( + ) 1
 
 // Computes the double of a number.
-let double = ( * ) 2
+let double = ( * ) 2 // takes any number and * by 2
 
 // Composes two functions.
 let compose f g =

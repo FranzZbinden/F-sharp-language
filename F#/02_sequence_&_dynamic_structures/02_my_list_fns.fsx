@@ -1,7 +1,7 @@
 
 // Determines whether a list is empty.
 let isEmpty lst = 
-    (lst = [])
+    (lst = [])  // return true if list is empty
 
 // Returns the first element of a list.
 let head = function

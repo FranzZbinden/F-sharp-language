@@ -18,6 +18,10 @@ let rec length = function
     | [] -> 0
     | _::tl -> 1 + length tl
 
+let rec length2 = function 
+    | [] -> 0
+    | _::tl -> 1 + length2 tl 
+
 // Returns the number of elements in a list.
 // Note: Uses a tail-recursive helper function.
 let length' lst =
@@ -27,10 +31,21 @@ let length' lst =
         
     loop 0 lst
 
+let length'2 lst = 
+    let rec loop num = function
+        | [] -> 0
+        | _::tl -> loop (num + 1) tl
+
+    loop 0 lst
+
 // Returns the sum of the elements in a list of integers.
 let rec sum = function
     | [] -> 0
     | hd::tl -> hd + sum tl
+
+let rec sum acc = function 
+    | [] -> acc
+    | hd::tl -> sum (acc + 1) (tl)
 
 // Returns the sum of the elements in a list of integers.
 // Note: Uses a tail-recursive helper function.

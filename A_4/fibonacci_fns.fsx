@@ -1,15 +1,18 @@
+
+// Normal recursion
 let rec fibo num =
     if num = 0 then 0 
     elif num = 1 then 1 
     else fibo (num-1) + fibo (num-2)
 
+// Recursive using pattern matching
 let rec fiboMatch num = 
     match num with
     | 0 -> 0
     | 1 -> 1
     | _ -> fiboMatch(num-1) + fiboMatch (num-2)
 
-
+// Using tail recursion
 let fiboIter num =
     let rec loop a b cnt= 
         match cnt with        
@@ -25,7 +28,7 @@ let fiboHigher num =
     let (prev, curr) = List.fold window (0, 1) [1..num]
     prev
 
-
+// fibonacci sequence
 let fiboSeq = 
     Seq.initInfinite (fun num -> 
         let (prev, curr) = List.fold window (0, 1) [1..num] 

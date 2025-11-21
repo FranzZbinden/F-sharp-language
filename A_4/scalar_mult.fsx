@@ -1,4 +1,3 @@
-// This file determines the scalar multiplication of an integer and a list of integers using different methods:
 
 // Recursive function to scale a list to the given number
 let rec scalarMult num lst = 
@@ -8,7 +7,6 @@ let rec scalarMult num lst =
 
 // Function iter to scale a list to the given number
 let scalarMultIter num lst =
-
     let rec loop num lst newLst=
         match lst with
         | [] -> List.rev newLst

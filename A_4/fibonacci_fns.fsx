@@ -11,18 +11,38 @@ let rec fiboMatch num =
 
 
 let fiboIter num =
-    let rec loop num = 
-        match num with 
-        | 0 -> 0
-        | 1 -> 1
-        | _ -> loop (num-1) + loop (num-2)
+    let rec loop a b cnt= 
+        match cnt with        
+        | 0 -> a
+        | _ -> loop (b) (a + b) (cnt - 1)
 
-    loop num
-
+    loop 0 1 num
+    
+// defining the window func that  (a, b) -> (b, a+b)
+let window (prev, curr) _ = (curr, curr + prev)
 
 let fiboHigher num =
-    let window (prev, curr) _ = (curr, curr + prev)
     let (prev, curr) = List.fold window (0, 1) [1..num]
     prev
 
-// let fiboSeq =
+
+let fiboSeq = 
+    Seq.initInfinite (fun num -> 
+        let (prev, curr) = List.fold window (0, 1) [1..num] 
+        prev
+        ) 
+    
+// Setting the limit
+let limit = 7
+
+// Taking only the elements to give later to -> fiboSeq 
+fiboSeq
+    |> Seq.take limit
+
+// Prints vvvvvvvvvv
+printfn "Computing the 7-th term of the Fibonacci sequence: "
+printfn "Using if expression: %d" (fibo limit)
+printfn "Using pattern matching: %d"(fiboMatch limit)
+printfn "Using tail-recursive helper function: %d"(fibo limit)
+printfn "Using List.fold: %d"(fibo limit)
+printfn "%A" fiboSeq

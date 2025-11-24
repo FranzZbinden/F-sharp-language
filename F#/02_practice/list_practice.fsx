@@ -76,3 +76,6 @@ let rec append lst1 lst2 =
     | [] ->  lst2
     | hd::tl -> hd :: append tl lst2
     
+let rec last2 = function
+    | [hd] -> hd
+    | hd::tl -> last2 tl

@@ -40,5 +40,3 @@ let foldProduct lst = List.fold (fun acc curr -> curr * acc) 1 lst
 let mapIncrement lst = List.map(fun curr -> curr + 1) lst
 
 
-
-

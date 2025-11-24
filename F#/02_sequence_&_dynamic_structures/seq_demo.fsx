@@ -1,5 +1,4 @@
 
-
 // Entry point for the program.
 let tens = seq {10..10..1000}
 printfn "The sequence of the first 100 tens is %A" tens 

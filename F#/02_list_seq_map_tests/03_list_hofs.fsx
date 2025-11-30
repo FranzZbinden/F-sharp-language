@@ -2,7 +2,6 @@ let numbers = [1;2;3;4;5]
 
 let add x y = x + y
 
-
 let sumation = List.fold (fun acc x -> x + acc ) 0 numbers 
 
 printfn "%d" sumation

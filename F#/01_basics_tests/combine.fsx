@@ -13,7 +13,6 @@ let combineThree num1 num2 num3 combineTwo =
     combineTwo num1 (combineTwo num2 num3)
 
 
-// Anonimous functions in F#
 let maximous = 
     fun n1 n2 -> 
         if n1 > n2 

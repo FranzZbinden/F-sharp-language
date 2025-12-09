@@ -1,13 +1,15 @@
-// Compute the min element on a list:
+// Compute the min element on a list using: List fold, tail & normal recursion:
 
 let minimum val1 val2 = if val1 < val2 then val1 else val2  // Auxiliar Function
 
-// let listMin lst = function
-//     | [] ->
-//         failwith "listMin: empty list"
-//     | x :: xs ->
-//         List.fold minimum x xs
+//Using list fold
+let list_min = function
+    | [] ->
+        failwith "listMin: empty list"
+    | hd :: tl ->
+        List.fold minimum hd tl
 
+//Using tail recursive 
 let list_min_tl lst = 
     let rec loop min = function 
         | [] -> min 
@@ -15,11 +17,9 @@ let list_min_tl lst =
 
     match lst with | [] -> 0 | hd::tl -> loop hd tl 
 
-// let list_min_rec lst =
-//     let rec loop min lst = 
-//         match lst with 
-//         | [] -> min
-//         | hd::tl -> loop 
-
-//     match lst with | [] -> 0 | hd::tl -> loop hd tl
-
+//Using normal recurison
+let rec list_min_rec = function 
+        | [] -> failwith "Empty list"
+        | [hd] -> hd    
+        | hd::tl -> minimum hd (list_min_rec tl)
+        

@@ -1,5 +1,7 @@
+// Discriminated Unions
+
 // Defines the set of available colors.
-type Color = White | Red | Green | Blue | Yellow | Black
+type Color = White | Red | Green | Blue | Yellow | Black // Discriminated union
 
 // Returns the string representation for the given color.
 let colorToString = function
@@ -11,7 +13,7 @@ let colorToString = function
    | Black -> "black"
 
 // Defines a 2D point with x- and y-coordinates.
-type Point = Point of float * float
+type Point = Point of float * float // constructor (*): and
 
 // Returns the string representation for the given point.
 let pointToString = function
@@ -19,7 +21,7 @@ let pointToString = function
 
 // Defines the set of available shapes.
 type Shape =
-   | Circle of 
+   | Circle of // of: case has value OF
       color: Color * location: Point * radius: float
    | Rectangle of 
       color: Color * location: Point * width: float * height: float
@@ -34,8 +36,8 @@ let area = function
 
 // Returns the perimeter of the given shape.
 let perim = function
-   | Circle (_, _, rad) -> 2.0 * pi * rad
-   | Rectangle (_, _, wdt, hgt) -> 2.0 * (wdt + hgt)
+   | Circle (_, _, rad) -> 2.0 * pi * rad // if arg is circle -> return perim of circle
+   | Rectangle (_, _, wdt, hgt) -> 2.0 * (wdt + hgt) // if arg is Rectangle -> return perim of Rectangle
 
 // Returns a string representation for the given shape.
 let shapeToString = function

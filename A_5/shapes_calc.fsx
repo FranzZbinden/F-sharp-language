@@ -63,6 +63,9 @@ let shapeToString = function
    | Rectangle (clr, loc , wdt, hgt) ->
       sprintf "color: %s, location: %s, width: %.1f, height: %.1f" 
          (colorToString clr) (pointToString loc) wdt hgt
+   | Triangle (clr, loc , side_a, side_b, side_c) ->
+      sprintf "color: %s, location: %s, Side-A: %.1f, Side-B: %.1f, Side-C: %.1f" 
+         (colorToString clr) (pointToString loc) side_a side_b side_c
 
 // Prints the data of the given shape.
 let printData shp =
@@ -70,6 +73,7 @@ let printData shp =
       match shp with
       | Circle (_) -> "circle"
       | Rectangle (_) -> "rectangle"
+      | Triangle (_) -> "triangle"
    )
 
    printfn "Its data is %s" (shapeToString shp)
@@ -82,8 +86,8 @@ let shapes = [
       radius = 5.0)
    Rectangle (color = Yellow, location = Point (8.0, 9.0), 
       width = 5.0, height = 6.0)
-   Circle (color = Blue, location = Point (7.0, 3.0), 
-      radius = 4.0)
+   Triangle (color = Blue, location = Point (7.0, 3.0), 
+      side_a = 2.0, side_b = 3.4, side_c = 4.0)
 ]
 
 printfn "These are the shapes..."

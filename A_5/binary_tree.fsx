@@ -26,7 +26,6 @@ let rec list_from_tree = function
         | Tree (Empty,root,Empty) -> [root]
         | Tree (lft,root,rgt) -> list_from_tree lft @ root :: list_from_tree rgt
 
-
 // Returns the root element of a tree.
 let root = function
     | Empty -> failwith "empty tree"

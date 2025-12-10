@@ -12,6 +12,21 @@ type 'a Tree =  // defines generic tree
     | Empty
     | Tree of 'a Tree * 'a * 'a Tree    // left * middle * right
 
+// Auxiliar for height
+let max a b = if a > b then a else b
+
+// A function that returns the number of levels in the given binary search tree
+let rec height = function
+    | Empty -> 0
+    | Tree (lft,_,rgt) -> 1 + (max (height lft) (height rgt))  // using previously defined auxiliar funcion ^^^^^
+
+// A function that returns the list that corresponds to the given binary search tree
+let rec list_from_tree = function
+        | Empty -> []
+        | Tree (Empty,root,Empty) -> [root]
+        | Tree (lft,root,rgt) -> list_from_tree lft @ root :: list_from_tree rgt
+
+
 // Returns the root element of a tree.
 let root = function
     | Empty -> failwith "empty tree"
@@ -29,9 +44,9 @@ let right = function
 
 // Returns the tree that results by inserting an element in the given tree.
 let rec insert elem = function
-    | Empty -> Tree (Empty, elem, Empty)    // if empty node -> create a node with the element
-    | Tree (lft, root, rgt) when elem < root ->
-        Tree ((insert elem lft), root, rgt)
+    | Empty -> Tree (Empty, elem, Empty)    // if empty node -> create a node with the element and unwind
+    | Tree (lft, root, rgt) when elem < root -> // match tree with condition 
+        Tree ((insert elem lft), root, rgt) // inside tree type -> rec call to continue search
     | Tree (lft, root, rgt) when elem > root -> 
         Tree (lft, root, (insert elem rgt))
     | _ as bst -> bst // if elem already exist -> return without any change
@@ -80,6 +95,9 @@ let numbers =
         |> insert 10 
         |> insert 40 
         |> insert 20
+
+printfn "The tree height is %A" (height numbers)
+printfn "The list of the tree is: %A" (list_from_tree numbers)
 
 printfn "The tree is %s" (numbers |> treeToString)
 printfn "Its size is %d" (size numbers)

@@ -1,4 +1,11 @@
-// Discriminated Unions
+(*
+ * File: shapes_calc.fsx
+ * Author: Franz Zbinden García 841-22-0855
+ * Course: COTI 4039-VH1
+ * Date: 12/09/2025
+ * Purpose: This program displays the data, area, and perimeter for each
+ *          element in a list of shapes.
+ *)
 
 // Defines the set of available colors.
 type Color = White | Red | Green | Blue | Yellow | Black // Discriminated union

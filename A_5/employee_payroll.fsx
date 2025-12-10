@@ -1,15 +1,22 @@
-
+(*
+ * File: employee_payroll.fsx
+ * Author: Franz Zbinden García 841-22-0855
+ * Course: COTI 4039-VH1
+ * Date: 12/9/2025
+ * Purpose: This program calculates the salary of different employees and prints them
+ *)
 
 type Employee =
     | HourlyEmployee of id: string * name: string * pay_rate: float        * hours_worked: float
     | SalesEmployee  of id: string * name: string * commission_rate: float * sales_amount: float
 
+// Auxiliar function that calculates extra pay for hourly employee
 let extra_pay pay hours =
     match hours with
     | h when h > 40.0 -> hours * pay * 1.5 
     | _ -> hours * pay 
 
-
+// Print employees & calculate salary
 let print_employee = function
     | HourlyEmployee(id,name,pay_rate, hours_worked) -> 
         printf "Id: %A\n Name: %A\n PayRate: %A\n Hours Worked: %A\n Weekly Salary %A\n\n"
@@ -28,5 +35,4 @@ let employees : Employee list =
 
 for emp in employees do
     print_employee emp
-
 

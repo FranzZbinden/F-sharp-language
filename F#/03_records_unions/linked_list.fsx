@@ -1,10 +1,3 @@
-(*
- * File: linked_list.fsx
- * Author: Antonio F. Huertas 841-##-##
- * Course: COTI 4039-VH1
- * Date: 11/26/2025
- * Purpose: This program demonstrates how to define and use a linked list.
- *)
 
 // Defines a type for a linked list.
 type 'a List =

@@ -1,11 +1,3 @@
-(*
- * File: binary_tree.fsx
- * Author: Franz Zbinden García 841-22-0855
- * Course: COTI 4039-VH1
- * Date: 11/26/2025
- * Purpose: This program demonstrates how to define and use a binary search
- *          tree.
- *)
 
 // Defines a type for a binary tree.
 type 'a Tree =  // defines generic tree

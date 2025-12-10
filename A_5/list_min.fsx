@@ -1,10 +1,4 @@
-(*
- * File: list_min.fsx
- * Author: Franz Zbinden García 841-22-0855
- * Course: COTI 4039-VH1
- * Date: 12/9/2025
- * Purpose: Compute the min element on a list using: List fold, tail & normal recursion:
- *) 
+
 let minimum val1 val2 = if val1 < val2 then val1 else val2  // Auxiliar Function
 
 // Using list fold

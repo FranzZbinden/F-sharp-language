@@ -1,5 +1,4 @@
 
-
 // Entry point of the program.
 let numbers = [30; 10; 50; 40; 20]
 

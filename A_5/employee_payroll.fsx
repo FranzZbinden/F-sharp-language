@@ -1,10 +1,3 @@
-(*
- * File: employee_payroll.fsx
- * Author: Franz Zbinden García 841-22-0855
- * Course: COTI 4039-VH1
- * Date: 12/9/2025
- * Purpose: This program calculates the salary of different employees and prints them
- *)
 
 type Employee =
     | HourlyEmployee of id: string * name: string * pay_rate: float        * hours_worked: float

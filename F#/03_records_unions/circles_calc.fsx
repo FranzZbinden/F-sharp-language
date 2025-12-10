@@ -1,10 +1,3 @@
-(*
- * File: circles_calc.fsx
- * Author: Franz Zbinden
- * Date: 11/24/2025
- * Purpose: This program computes and displays the area and circumference of
- *          the given circles.
- *)
 
 // Defines a 2D point with x- and y-coordinates.
 type Point = float * float

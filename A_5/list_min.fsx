@@ -14,7 +14,9 @@ let list_min_tl lst =
         | [] -> min 
         | hd::tl -> loop (minimum min hd) tl
 
-    match lst with | [] -> failwith "Empty list" | hd::tl -> loop hd tl 
+    match lst with 
+    | [] -> failwith "Empty list" 
+    | hd::tl -> loop hd tl 
 
 //Using normal recurison
 let rec list_min_rec = function 
